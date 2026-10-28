@@ -25,9 +25,9 @@ library(ragg)
 font_add("taipei", regular = "/Users/tpliu/Desktop/UTaipei/國發會/知識圖譜範例/TaipeiSansTCBeta-Regular.ttf")
 showtext_auto()  # 讓 ggplot 繪圖時使用 showtext
 
-####################
-####Loading data####
-####################
+######################
+#### Loading data ####
+######################
 ai <- readRDS("/Users/tpliu/Desktop/Projects/AI/Data/ai-analysis.rds")
 
 
@@ -146,7 +146,7 @@ r_c_two <- c_cor_two$estimate#Correlation Coefficient
 n_c_two <- c_cor_two$parameter+2#N
 
 #####################################################################################################
-#### Correlation and N for Aii Treatment's Univ Material Eval and All Treatment's Interview Eval ####
+#### Correlation and N for ALL Treatment's Univ Material Eval and All Treatment's Interview Eval ####
 #####################################################################################################
 c_tre_two <- cor.test(ai_fisher$material_score[ai_fisher$category != "control"], ai_fisher$interview_score[ai_fisher$category != "control"])
 r_t_two <- c_tre_two$estimate#Correlation Coefficient
@@ -161,13 +161,13 @@ fisher_test(r_c_int, r_t_int, n_c_int, n_t_int)# Univ Interview Eval vs Legislat
 
 fisher_test(r_c_two, r_t_two, n_c_two, n_t_two)# Univ Material Eval vs Univ Interview Eval
 
+#fisher_test(r_c_two, r_c_mat, n_c_two, n_c_mat)
+#fisher_test(r_c_two, r_c_int, n_c_two, n_c_int)
+#fisher_test(r_c_mat, r_c_int, n_c_mat, n_c_mat)
 
-
-
-
-
-
-
+#fisher_test(r_t_two, r_t_mat, n_t_two, n_t_mat)
+#fisher_test(r_t_two, r_t_int, n_t_two, n_t_int)
+#fisher_test(r_t_mat, r_t_int, n_t_mat, n_t_mat)
 
 
 
